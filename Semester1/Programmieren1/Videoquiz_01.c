@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 int main()
 {
     float startkapital;
@@ -33,3 +35,4 @@ int main()
     }
     printf("Monate: %d", iterations);
 }
+#pragma clang diagnostic pop
