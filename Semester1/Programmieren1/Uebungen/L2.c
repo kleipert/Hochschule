@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-// This code counts from 1 to 10 and then counts backwards from -5 to -15 using do while loops
+// This code prints out a multiplication table
 int main()
 {
     int first = 1, second = 1;
