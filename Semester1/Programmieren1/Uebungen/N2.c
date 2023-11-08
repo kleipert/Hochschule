@@ -5,7 +5,6 @@
 
 int main()
 {
-    srand(time(NULL));
     char syllables[6][4] = {"asd", "qwe", "tzu", "fgh", "kli", "vbn"};
     printf("stored:\n");
     for (int i = 0; i < 6; ++i)
@@ -15,6 +14,7 @@ int main()
 
     for (int i = 0; i < 10; ++i)
     {
+        srand(clock());
         int size = 0;
         int syllablesAmount = (rand() % (5 - 2 + 1)) + 2;
         printf("Generating word #%d: ", i+1);
