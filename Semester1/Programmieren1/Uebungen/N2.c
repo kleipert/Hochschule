@@ -15,12 +15,17 @@ int main()
 
     for (int i = 0; i < 10; ++i)
     {
+        int size = 0;
         int syllablesAmount = (rand() % (5 - 2 + 1)) + 2;
+        printf("Generating word #%d: ", i+1);
         for (int j = 0; j < syllablesAmount; ++j)
         {
             int itemIdx = (rand() % 6);
+            size += sizeof(syllables[itemIdx]) - 1;
             printf("%s", syllables[itemIdx]);
         }
+        printf(" which has %d letters.", size);
+        size = 0;
         printf("\n");
     }
     return 0;
