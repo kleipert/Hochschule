@@ -9,8 +9,10 @@
 char board[BOARD_HEIGHT][BOARD_WIDTH];
 int snake_x = BOARD_WIDTH/2;
 int snake_y = BOARD_HEIGHT/2;
+int snake_move_x = 1;
+int snake_move_y = 0;
 
-void InitWalls()
+void InitBorder()
 {
     for (int i = 0; i < BOARD_HEIGHT; ++i)
     {
@@ -29,6 +31,15 @@ void InitWalls()
     }
 }
 
+int* GetRandomPosition(int* result)
+{
+    int height = rand() % (BOARD_HEIGHT - 2) + 1;
+    int width = rand() % (BOARD_WIDTH - 2) + 1;
+    result[0] = height;
+    result[1] = width;
+    return result;
+}
+
 void PlaceFood(int amount)
 {
     for (int i = 0; i < amount; ++i)
@@ -39,9 +50,44 @@ void PlaceFood(int amount)
     }
 }
 
+void PlaceWalls(int x, int y, int amount)
+{
+    int randomPos[2];
+    for (int i = 0; i < amount; ++i)
+    {
+        GetRandomPosition(randomPos);
+
+        for (int j = 0; j < WALLS_LENGTH; ++j)
+        {
+            int final_x = randomPos[1];
+            int final_y = randomPos[0];
+
+            if(x == 1)
+                final_x += j;
+            if(x == -1)
+                final_x -= j;
+            if(y == 1)
+                final_y += j;
+
+            if(final_y <= BOARD_HEIGHT - 1 && final_x <= BOARD_WIDTH - 1)
+                board[final_y][final_x] = WALL;
+        }
+    }
+}
+
+
+void PlaceRandomWalls()
+{
+    PlaceWalls(0,1, VERTICAL_WALLS);
+    PlaceWalls(1,0, HORIZONTAL_WALLS);
+    PlaceWalls(1,1, DIAGONAL_WALLS);
+    PlaceWalls(-1,1, DIAGONAL_WALLS);
+}
+
 void InitBoard()
 {
-    InitWalls();
+    InitBorder();
+    PlaceRandomWalls();
     PlaceFood(FOOD_PER_SPAWN);
     board[snake_y][snake_x] = SNAKE;
 }
@@ -60,6 +106,29 @@ void PrintBoard()
     printf("\n");
 }
 
+void UpdateSnakeMovement(int x, int y)
+{
+    if(!(snake_move_y == -1 && y == 1) && !(snake_move_y == 1 && y == -1))
+        snake_move_y = y;
+    if(!(snake_move_x == -1 && x == 1) && !(snake_move_x == 1 && x == -1))
+        snake_move_x = x;
+}
+
+void Move()
+{
+    if(snake_move_y == 1 && (snake_y + snake_move_y < BOARD_HEIGHT - 1))
+        snake_y += snake_move_y;
+
+    if(snake_move_y == -1 && snake_y > 1)
+        snake_y += snake_move_y;
+
+    if(snake_move_x == 1 && (snake_x + snake_move_x < BOARD_WIDTH - 1))
+        snake_x += snake_move_x;
+
+    if(snake_move_x == -1 && snake_x > 1)
+        snake_x += snake_move_x;
+}
+
 int main()
 {
     srand(time(NULL));
@@ -68,32 +137,29 @@ int main()
     {
         clear();
         PrintBoard();
+        board[snake_y][snake_x] = SPACE;
         if(kbhit())
         {
-            board[snake_y][snake_x] = SPACE;
             char input = getchar();
             switch(input)
             {
                 case 'i':
-                    if(snake_y - 1 > 0)
-                        snake_y--;
+                    UpdateSnakeMovement(0,-1);
                     break;
                 case 'k':
-                    if(snake_y + 1 < BOARD_HEIGHT-1)
-                        snake_y++;
+                    UpdateSnakeMovement(0,1);
                     break;
                 case 'j':
-                    if(snake_x - 1 > 0)
-                        snake_x--;
+                    UpdateSnakeMovement(-1,0);
                     break;
                 case 'l':
-                    if(snake_x + 1 < BOARD_WIDTH-1)
-                        snake_x++;
+                    UpdateSnakeMovement(1,0);
                     break;
             }
-            board[snake_y][snake_x] = SNAKE;
         }
-        mssleep(500);
+        Move();
+        board[snake_y][snake_x] = SNAKE;
+        mssleep(100);
     }
     return 0;
 }
