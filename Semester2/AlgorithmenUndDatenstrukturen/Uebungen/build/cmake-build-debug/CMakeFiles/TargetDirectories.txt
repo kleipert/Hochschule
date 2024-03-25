@@ -1,0 +1,3 @@
+C:/Users/Anwender/Documents/Projekte/Hochschule/Hochschule/Semester2/AlgorithmenUndDatenstrukturen/Uebungen/build/cmake-build-debug/CMakeFiles/Uebung1_Collatz.dir
+C:/Users/Anwender/Documents/Projekte/Hochschule/Hochschule/Semester2/AlgorithmenUndDatenstrukturen/Uebungen/build/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Anwender/Documents/Projekte/Hochschule/Hochschule/Semester2/AlgorithmenUndDatenstrukturen/Uebungen/build/cmake-build-debug/CMakeFiles/rebuild_cache.dir
