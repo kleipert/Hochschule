@@ -105,20 +105,20 @@ Vector Vector::operator*(const Vector &rhs) const {
     return resVec;
 }
 
-std::ostream& operator<<(std::ostream& os, Vector v) const {
+std::ostream& operator<<(std::ostream& os, const Vector& v){
     os << "(";
-    for (int i = 0; i <= m_size-1; ++i)
+    for (int i = 0; i <= v.GetSize()-2; ++i)
     {
-        os << m_elements[i] << ", ";
+        os << v[i] << ", ";
     }
-    os << ")";
+    os << v[v.GetSize()-1] << ")";
     return os;
 }
 
-std::istream& operator>>(std::istream& is, Vector v) const {
-    for (int i = 0; i < m_size -1; ++i)
+std::istream& operator>>(std::istream& is, Vector& v) {
+    for (int i = 0; i < v.GetSize() -1; ++i)
     {
-        is >> m_elements[i];
+        is >> v[i];
     }
     return is;
 }

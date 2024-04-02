@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.10)
+project(TestMultiple)
+
+# Add executable targets
+add_executable(Vector_Test Vector_Test.cpp Vector.cpp)
+
+# Link Header Files
+target_include_directories(Vector_Test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+
+# Optionally, you can link additional libraries if needed
+# target_link_libraries(Vector_Test ${OTHER_LIBRARIES})
+# target_link_libraries(Vector_Test2 ${OTHER_LIBRARIES})
+# target_link_libraries(executable3 ${OTHER_LIBRARIES})

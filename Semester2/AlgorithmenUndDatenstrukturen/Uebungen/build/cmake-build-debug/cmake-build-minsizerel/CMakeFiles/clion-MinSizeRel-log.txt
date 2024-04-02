@@ -1,0 +1,2 @@
+Cannot generate 'MinSizeRel' into C:\Users\Anwender\Documents\Projekte\Hochschule\Hochschule\Semester2\AlgorithmenUndDatenstrukturen\Uebungen\build\cmake-build-debug\cmake-build-minsizerel
+CMakeCache.txt is found in the project dir, only in-source generation will be performed.
