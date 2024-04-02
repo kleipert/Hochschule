@@ -8,5 +8,5 @@
 .idea/dataSources.local.xml
 
 # Ignore all files in the 'Executables' directory one level above that don't have the .exe extension
-Executables/*
+Executables/**
 !Executables/*.exe
