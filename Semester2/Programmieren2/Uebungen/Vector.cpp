@@ -74,21 +74,26 @@ bool Vector::operator>=(const Vector &rhs) const {
 
 Vector Vector::operator+(const Vector &rhs) const {
     Vector resVec = Vector(std::max(GetSize(), rhs.GetSize()));
-    for (int i = 0; i < GetSize() - 1; ++i)
+    for (int i = 0; i <= GetSize() - 1; ++i)
         resVec[i] = m_elements[i];
 
-    for (int i = 0; i < rhs.GetSize() - 1; ++i)
+    std::cout << "RES VEC: -> " << resVec;
+
+
+    for (int i = 0; i <= rhs.GetSize() - 1; ++i)
         resVec[i] += rhs.At(i);
+
+    std::cout << "RES VEC2: -> " << resVec;
 
     return resVec;
 }
 
 Vector Vector::operator-(const Vector &rhs) const {
     Vector resVec = Vector(std::max(GetSize(), rhs.GetSize()));
-    for (int i = 0; i < GetSize() - 1; ++i)
+    for (int i = 0; i <= GetSize() - 1; ++i)
         resVec[i] = m_elements[i];
 
-    for (int i = 0; i < rhs.GetSize() - 1; ++i)
+    for (int i = 0; i <= rhs.GetSize() - 1; ++i)
         resVec[i] -= rhs.At(i);
 
     return resVec;
@@ -96,10 +101,10 @@ Vector Vector::operator-(const Vector &rhs) const {
 
 Vector Vector::operator*(const Vector &rhs) const {
     Vector resVec = Vector(std::max(GetSize(), rhs.GetSize()));
-    for (int i = 0; i < GetSize() - 1; ++i)
+    for (int i = 0; i <= GetSize() - 1; ++i)
         resVec[i] = m_elements[i];
 
-    for (int i = 0; i < rhs.GetSize() - 1; ++i)
+    for (int i = 0; i <= rhs.GetSize() - 1; ++i)
         resVec[i] *= rhs.At(i);
 
     return resVec;
