@@ -8,5 +8,5 @@
 .idea/dataSources.local.xml
 
 # Ignore all files in the 'Executables' directory one level above that don't have the .exe extension
-Semester2/Programmieren2/Executables/**
-Semester2/Programmieren2/!Executables/*.exe
+Semester2/Programmieren2/Executables/build/**
+Semester2/Programmieren2/!Executables/build/*.exe
