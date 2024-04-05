@@ -4,10 +4,10 @@
 class Vector{
 public:
     Vector();
-    explicit Vector(int size);
+    explicit Vector(unsigned size);
     ~Vector();
     unsigned GetSize() const;
-    void SetSize(int size);
+    void SetSize(unsigned size);
     double At(int idx) const;
     void PushBack(double nbr);
 

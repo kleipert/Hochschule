@@ -4,7 +4,7 @@ Vector::Vector() {
     m_size = 0;
 }
 
-Vector::Vector(int size) {
+Vector::Vector(unsigned size) {
     m_size = size;
     m_elements = new double[m_size];
 }
@@ -17,13 +17,15 @@ unsigned Vector::GetSize() const{
     return m_size;
 }
 
-void Vector::SetSize(int size) {
+void Vector::SetSize(unsigned size) {
     double* newArray = new double[size];
     for (int i = 0; i < size; ++i)
         newArray[i] = m_elements[i];
+    //std::cout << "SetSize new created array: " << newArray;
 
     delete[] m_elements;
     m_elements = newArray;
+    m_size = size;
 }
 
 double Vector::At(int idx) const{
@@ -77,13 +79,8 @@ Vector Vector::operator+(const Vector &rhs) const {
     for (int i = 0; i <= GetSize() - 1; ++i)
         resVec[i] = m_elements[i];
 
-    std::cout << "RES VEC: -> " << resVec;
-
-
     for (int i = 0; i <= rhs.GetSize() - 1; ++i)
         resVec[i] += rhs.At(i);
-
-    std::cout << "RES VEC2: -> " << resVec;
 
     return resVec;
 }

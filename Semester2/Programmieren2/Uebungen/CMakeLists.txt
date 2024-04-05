@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 project(TestMultiple)
 
 # Add executable targets
-add_executable(Vector_Test Vector_Test.cpp Vector.cpp)
+add_executable(Vector_Test 1_1/Vector_Test.cpp 1_1/Vector.cpp)
 
 # Link Header Files
 target_include_directories(Vector_Test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
