@@ -8,6 +8,7 @@
 .idea/dataSources.local.xml
 
 # Ignore all files in the 'Executables' directory one level above that don't have the .exe extension
+.idea/
 Semester2/Programmieren2/Executables/build/CMakeFiles
 Semester2/Programmieren2/Executables/build/**
 Semester2/Programmieren2/!Executables/build/*.exe
