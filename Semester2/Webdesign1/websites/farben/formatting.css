@@ -1,0 +1,25 @@
+﻿body {
+    background-color: yellow;
+    font-family: 'comic sans ms';
+    color: green;
+}
+
+h1 {
+    color: lightgreen;
+    font-size: 50px;
+}
+
+h2 {
+    color: blue;
+    background-color: lightgreen;
+    padding-left: 10px;
+}
+
+figure { margin-left: 0 }
+
+figcaption {
+    font-size: 10px;
+    color: gray;
+}
+
+section { width: 600px; }   
