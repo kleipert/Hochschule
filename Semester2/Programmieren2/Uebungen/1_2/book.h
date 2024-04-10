@@ -11,8 +11,8 @@ enum Gerne {
 class book : public publication
 {
 public:
-    explicit book(const std::string title, const std::string author, const int release, const Gerne genre, const std::string isbn);
-    std::string GetIdentification() override;
+    explicit book(std::string title, std::string author, int release, Gerne genre, std::string isbn);
+    std::string GetIdentification() const override;
 
 private:
     Gerne m_gerne;

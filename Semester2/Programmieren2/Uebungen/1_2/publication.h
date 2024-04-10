@@ -5,13 +5,13 @@ class publication
 {
 public:
 
-    publication(const std::string title, const std::string author, const int release);
-    std::string GetTitle();
-    std::string GetAuthor();
-    int GetRelease();
+    publication(std::string title, std::string author, int release);
+    std::string GetTitle() const;
+    std::string GetAuthor() const;
+    int GetRelease() const;
     void Borrow();
     void Return();
-    virtual std::string GetIdentification() = 0;
+    virtual std::string GetIdentification() const = 0;
 
 private:
     std::string m_title;
@@ -19,3 +19,7 @@ private:
     int m_release;
     bool m_isAvailable;
 };
+
+bool operator==(const publication& lhs, const publication& rhs);
+bool operator!=(const publication& lhs, const publication& rhs);
+std::ostream& operator<<(std::ostream& os, const publication& pub);

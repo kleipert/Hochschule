@@ -4,9 +4,9 @@
 
 #include "book.h"
 
-book::book(const std::string title, const std::string author, const int release, const Gerne gerne, const std::string isbn) : publication(title, author, release), m_gerne(gerne), m_isbn(isbn){}
+book::book(std::string title, std::string author, int release, Gerne gerne, std::string isbn) : publication(title, author, release), m_gerne(gerne), m_isbn(isbn){}
 
-std::string book::GetIdentification()
+std::string book::GetIdentification() const
 {
     return m_isbn;
 }
