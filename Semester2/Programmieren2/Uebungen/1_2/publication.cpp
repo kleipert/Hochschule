@@ -1,6 +1,13 @@
 #include "publication.h"
 #include "iostream"
 
+publication::publication(const std::string title, const std::string author, const int release)
+{
+    m_title = title;
+    m_author = author;
+    m_release = release;
+    m_isAvailable = true;
+}
 
 std::string publication::GetTitle()
 {

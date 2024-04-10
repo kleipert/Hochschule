@@ -5,6 +5,7 @@ class publication
 {
 public:
 
+    publication(const std::string title, const std::string author, const int release);
     std::string GetTitle();
     std::string GetAuthor();
     int GetRelease();
