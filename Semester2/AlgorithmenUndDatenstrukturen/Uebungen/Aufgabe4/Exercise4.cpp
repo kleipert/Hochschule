@@ -4,7 +4,7 @@ unsigned F_r(unsigned start)
 {
     if(start <= 2)
         return 1;
-    return (F_r(start-2) + F_r(start-1));
+    return start * F_r(start-1) - F_r(start-2);
 }
 
 unsigned F_i(unsigned start)
@@ -15,11 +15,11 @@ unsigned F_i(unsigned start)
 
     if(start > 2)
     {
-        for (int i = 3; i <= start; ++i)
+        for (unsigned i = 3; i <= start; ++i)
         {
-            val1 = val2;
-            val2 = result;
-            result = val1 + val2;
+            result = i * val1 - val2;
+            val2 = val1;
+            val1 = result;
         }
     }
     return result;
@@ -28,6 +28,6 @@ unsigned F_i(unsigned start)
 int main()
 {
     unsigned startValue = 6;
-    std::cout << "Exercise 4: Recursive with nbr 5 " << startValue << ": " << F_r(startValue) << std::endl;
+    std::cout << "Exercise 4: Recursive with nbr " << startValue << ": " << F_r(startValue) << std::endl;
     std::cout << "Exercise 4: Iterative with nbr " << startValue << ": " << F_i(startValue) << std::endl;
 }
