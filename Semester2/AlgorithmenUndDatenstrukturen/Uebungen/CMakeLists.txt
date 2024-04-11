@@ -5,6 +5,7 @@ project(AuDProject)
 add_executable(Aufgabe4 Aufgabe4/Exercise4.cpp)
 add_executable(Aufgabe5 Exercise5/Exercise5.cpp)
 add_executable(Aufgabe6 Exercise6/Exercise6.cpp)
+add_executable(Aufgabe7 Exercise7/Exercise7.cpp)
 
 #add_executable(Publication_Test 1_2/1_2_Test.cpp)
 
