@@ -1,6 +1,6 @@
 #include "publication.h"
 
-class magazine : publication
+class magazine : public publication
 {
 public:
     magazine(std::string title, std::string author, int release, std::string issn);
