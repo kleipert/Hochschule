@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(TestMultiple)
+project(Programming2)
 
 # Add executable targets
 
