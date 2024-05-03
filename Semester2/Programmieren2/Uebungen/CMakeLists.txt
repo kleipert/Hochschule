@@ -7,6 +7,7 @@ add_executable(Publication_Test 1_2/1_2_Test.cpp
         1_2/magazine.cpp
         1_2/publication.cpp
         1_2/book.cpp)
+add_executable(2_1_Stack 2/2_1/main.cpp)
 
 # Link Header Files
 #target_include_directories(Vector_Test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
