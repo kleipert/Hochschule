@@ -9,6 +9,7 @@ add_executable(Aufgabe7 Exercise7/Exercise7.cpp)
 add_executable(Aufgabe8 Exercise8/Exercise8.cpp)
 add_executable(Aufgabe9 Exercise9/Exercise9.cpp)
 add_executable(Aufgabe19 Exercise19/Exercise19.cpp)
+add_executable(Aufgabe20 Exercise20/Exercise20.cpp Exercise20/Stack.cpp)
 
 #add_executable(Publication_Test 1_2/1_2_Test.cpp)
 
