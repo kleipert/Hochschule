@@ -9,7 +9,7 @@ void Swap(int* inputArray, int idxOne, int idxTwo)
 
 void PrintArray(int* inputArray, int arrayLength)
 {
-    std::cout << "Printing Array: " << std::endl;
+    std::cout << "Printing Array: ";
 
     for (int i=0; i<arrayLength; i++)
     {

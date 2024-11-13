@@ -55,7 +55,7 @@ int scanner_b()
                     state = -1;
                 break;
             case 2:
-                if ((input !='1') && (input !='2') && (input != '\n'))
+                if ((input !='1') && (input !='0') && (input != '\n'))
                     state = -1;
                 break;
             default:
@@ -72,7 +72,7 @@ int scanner_b()
 
 int main()
 {
-    std::cout << "Enter your Input and press Enter:\n" << scanner_a();
+    //std::cout << "Enter your Input and press Enter:\n" << scanner_a();
     std::cout << "Enter your Input and press Enter:\n" << scanner_b();
     
     return 0;
