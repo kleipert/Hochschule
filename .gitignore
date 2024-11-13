@@ -15,3 +15,6 @@ Semester2/Programmieren2/!Executables/build/*.exe
 Semester2/AlgorithmenUndDatenstrukturen/Executables/build/CMakeFiles
 Semester2/AlgorithmenUndDatenstrukturen/Executables/build/**
 Semester2/AlgorithmenUndDatenstrukturen/!Executables/build/*.exe
+Semester3/Compiler/Executables/build/CMakeFiles
+Semester3/Compiler/Executables/build/**
+Semester3/Compiler/!Executables/build/*.exe
