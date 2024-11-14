@@ -41,7 +41,7 @@ int scanner_b()
         input = getchar();
         switch (state)
         {
-            // as many "a" as we want or one "b"
+            
             case 0:
                 if (input =='0')
                     state = 1;
