@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 char token;
-void S(); void A(); void B();
+void S(); void A(); void B(); void C();
 
 char scanner()
 {
@@ -34,6 +34,7 @@ void S()
 {
     A();
     B();
+    C();
 }
 
 void A()
@@ -41,23 +42,30 @@ void A()
     if (token =='a')
     {
         check('a');
-        check('a');
-        A();
+        B();
     }
     else
-    {
-        B();
-    };
+        check('b');
 }
-
 void B()
 {
-    if (token =='b') 
+    if (token =='b')
+    {
         check('b');
-    
+        check('b');
+    }
+    else
+        C();
+}
+void C()
+{
+    if (token =='c')
+        check('c');
     else
         printf("wrong input\n");
 }
+
+
 
 int main()
 {
