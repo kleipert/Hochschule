@@ -70,7 +70,7 @@ int scanner_c()
 
 int main()
 {
-    std::cout << "Enter your Input and press Enter:\n" << scanner_b();
+    std::cout << "Enter your Input and press Enter:\n" << scanner_a();
 
     return 0;
 }
